@@ -1,0 +1,171 @@
+<!-- Cursor -->
+<style type="text/css">
+    * {
+        cursor: url(https://cur.cursors-4u.net/games/gam-4/gam372.cur), auto !important;
+    }
+</style><a href="https://www.cursors-4u.com/cursor/2008/12/22/world-of-warcraft-wow-hand-armor.html" target="_blank"
+    title="World Of Warcraft, WoW Hand Armor"><img src="https://cur.cursors-4u.net/cursor.png" border="0"
+        alt="World Of Warcraft, WoW Hand Armor" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/funcoes.js"></script>
+    <link rel="icon" href="./assets/icon/lsuperior.jpg">
+    <link rel="stylesheet" href="./css/login_e_cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="LogoWoW">
+            <a id="blogo" href="./index.html"><img src="./assets/icon/Shadowlands_Logo.png"></a>
+        </div>
+
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container tamanho-conteudo">
+            <div class="card medio">
+                <h2>Bem-vindo!</h2>
+                <div class="formulario">
+
+                    <span class="tipo_campo">Usuário:</span>
+                    <input id="nome_input" type="text" placeholder="Meu usuario">
+
+                    <span class="tipo_campo">E-mail:</span>
+                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+
+                    <span class="tipo_campo">Senha:</span>
+                    <input id="senha_input" type="password" placeholder="******">
+
+                    <span class="tipo_campo">Confirmação da Senha:</span>
+                    <input id="confirmacao_senha_input" type="password" placeholder="******">
+
+                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
+                </div>
+                <!-- <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div> -->
+            </div>
+        </div>
+        <div class="btn_lateral_direita_cadastro">
+        <a id="bsair" href="./index.html"><button class="btn_esquerda" onclick="sair()">Home</button></a>
+        </div>
+        <!--footer inicio-->
+        <div class="footer">
+            <div class="container cadastro">
+                <h4>Copyright 2022-2022 &copy; Projeto Individual. Todos Direitos Reservados.</h4>
+            </div>
+        </div>
+        <!--footer fim-->
+
+    </div>
+
+
+    <!-- <img src="../../Imagens/background_exemplar.jpg" alt=""> -->
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+
+        // if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar) {
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+
+        //     finalizarAguardar();
+        //     return false;
+        // }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+        //     finalizarAguardar();
+        //     return false;
+        // }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // if (senhaVar != confirmacaoSenhaVar) {
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
+        //     finalizarAguardar();
+        //     return false;
+        // }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // Enviando o valor da nova input
+        fetch("usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block"
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+                // window.location = "login.html";
+                // limparFormulario();
+                // finalizarAguardar();
+                alert("Cadastrado com sucesso!");
+                window.location="login.html"
+                console.log("Cadastro funcionando - teste")
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            // console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

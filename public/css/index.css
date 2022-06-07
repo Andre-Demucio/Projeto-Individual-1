@@ -1,0 +1,323 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image:"../assets/imgs/background_clean.png";
+    /* background-image: url(../assets/imgs/background_clean.png); */
+    /* cursor: url(../../../../Downloads/cursor.png);
+    cursor: pointer; */
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper video{
+    top: 0;
+    left: 0; 
+    object-fit: cover; 
+    width: 100%; 
+}
+
+.video_texto{
+       z-index: 1; 
+}
+
+header { 
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.infos {
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* position: relative; */
+}
+
+.logoEMenuAgrupados {
+    /* width: 56%; */
+    height: 100px;
+    /* background-color: purple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 230px;
+}
+
+#id_logo{
+    width: 293px;
+    position: relative;
+    left: 10%;
+}
+
+ul{
+    -webkit-transition: all .25s cubic-bezier(.23,1,.32,1) 0s;
+    transition: all .25s cubic-bezier(.23,1,.32,1) 0s;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(top,#efd100,#e2a233 19%,#f0c328 30%,#fff1a3 43%,#ffe13e 50%,#fff 51%,#fff);
+    background-size: 1em 2.5em;
+    color: #f8b700;
+    display: inline-block;
+    line-height: 1.5em;
+    position: relative;
+    z-index: auto;
+    background-position: center 0;
+    text-transform: uppercase;
+    font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
+    font-weight: 700;
+}
+
+/* #id_logo {
+    width: 179px;
+} */
+
+.menu {
+    /* width: 65%; */
+    height: 100px ;
+    background-color: #211510;
+    display: flex;
+    align-items: center;
+    border-radius: 32px 0px 0px 20px
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    display: inline-block;
+    margin: 10px;
+    justify-content: space-around;
+
+}
+
+li:hover {
+    background-color: rgba(165, 42, 42, 0.253);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.logarECadastrar {
+    width: 100px;
+    height: 100px;
+    background-color: #211510;
+    border-radius: 0 32px 32px 0px;
+}
+
+#logo_dragao {
+    position: relative;
+    right: 55%;
+    width: 120px;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+/* Chat */
+
+.div_img5{
+    width: 500px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 33%;
+}
+
+#titulo5{
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.subtitulo_img5{
+    padding-top: 15px;
+    font-size: 1.5em;
+}
+
+.chats{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.chat1{
+    display: flex;
+    background-color: #f7f0f0;
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+.chat1 .posicao_chat1 .nick_data{
+    display: flex;
+}
+
+.nick{
+    width: 60px;
+}
+
+.comentario1{
+    padding: 10px;
+}
+.comentario2{
+    padding: 10px;
+}
+
+#blogin {
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    /* padding: 10px 15px; */
+    /* color: transparent; */
+    background-color: #850403;
+    width: 120px;
+    align-self: center;
+    margin-top: 5px;
+    color: #b9ab37;
+    border: 2px solid #2c343f;
+}
+
+#plogin {
+    margin-bottom: 0;
+}
+
+#botao_entrar {
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    /* padding: 10px 15px; */
+    /* color: transparent; */
+    background-color: #850403;
+    width: 93px;
+    align-self: center;
+    margin-top: 0px;
+    color: #b9ab37;
+    border: 2px solid #2c343f;
+    height: 26px;
+    display: flex;
+}
+#b_entrar {
+    color: #b9ab37;
+}
+
+#bsairconta {
+    font-family: "Barlow", sans-serif;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    /* padding: 10px 15px; */
+    /* color: transparent; */
+    background-color: #850403;
+    align-self: center;
+    margin-top: 0px;
+    color: #b9ab37;
+    border: 2px solid #2c343f;
+
+}
+#b_sair {
+    color: #b9ab37;
+}
+
+.home{
+    width: 100%;
+    font-family: "ars-maquette-web", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+/* #img_jailer{
+    z-index: -1;
+} */
+
+/* Home Imagens */ 
+
+.img1 {
+    background-image: url(../assets/imgs/VB.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+}
+
+.img2 {
+    background-image: url(../assets/imgs/Jailer.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+}
+
+.img3 {
+    background-image: url(../assets/imgs/CinemactWoW.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+}
+
+.img4 {
+    background-image: url(../assets/imgs/OrcVsHumans.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 130vh;
+    width: 100%;
+}
+
+.img5 {
+    background-image: url(../assets/imgs/Legado.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+}
+
+/* Home Textos */
+
+#titulo_imagem{
+    color: red;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 40px;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#titulo5{
+    color: red;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 40px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .chat1 .posicao_chat1 .nick_data .data_comentario2{
+    display: flex;
+    width: 100px;
+    justify-content: center;
+} */
+/* .card medio{
+    background: linear-gradient(to right, grey, blue, green);
+    -webkit-animation-clip: text;
+    -webkit-animation-fill-color: transparent;
+    text-decoration: none;
+} */

@@ -1,2 +1,3 @@
-# ProjetoIndividual
-Versão final - André Luiz S.M Demucio
+#Projeto-Individual
+
+~ Confeccionado por, André Luiz S.M. Demucio.

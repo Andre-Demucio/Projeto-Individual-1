@@ -1,0 +1,162 @@
+<!-- Cursor -->
+<style type="text/css">
+    * {
+        cursor: url(https://cur.cursors-4u.net/games/gam-4/gam372.cur), auto !important;
+    }
+</style><a href="https://www.cursors-4u.com/cursor/2008/12/22/world-of-warcraft-wow-hand-armor.html" target="_blank"
+    title="World Of Warcraft, WoW Hand Armor"><img src="https://cur.cursors-4u.net/cursor.png" border="0"
+        alt="World Of Warcraft, WoW Hand Armor" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icon/lsuperior.jpg">
+    <link rel="stylesheet" href="./css/ranque.css">
+    <title>Estatística</title>
+</head>
+
+<body>
+    <div class="quadro">
+        <div class="aba">
+            <div>
+                <div class="titulo">MÉTRICA DAS PARTIDAS ARENAS - SESSÃO 
+                </div>
+                <div class="titulo">Digite seu ranque atual, mostraremos qual classificação garantimos que você
+                    alcançará :
+                </div>
+                <div class="subtitulo">Ranques maiores geram menores pontuações</div>
+                <div class="input_e_botao">
+                    <div>
+                        <div>
+                            <label class="nome_input" data-shrink="true"> Digite seu ranque
+                            </label>
+                            <div>
+                                <input aria-invalid="false" name="sc-wow-rating-input" type="text" class="input_ranque" id="input_rank"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botao_ranque">
+                        <!-- <div class="clique" >Exibir Ranque garantido</div> -->
+                        <button id="botao_ranque_id" onclick="exibir_ranque()">Exibir Ranque garantido</button>
+                        <i class="seta">keyboard_arrow_right</i>
+                    </div>
+                </div>
+            </div>
+            <div class="exibir_ranque">
+                <div>
+                    <img src="https://ik.imagekit.io/skillcapped/wow/pricing-page/rank-icon-02_2w4TedmQ1.png?tr=h-80"
+                        height="80">
+                    <div class="ranque-numero"><span id="resultado0"></span></div>
+                    <div></div>
+                    <div>
+                        <div class="tempo">Começo</div>
+                        <div class="ranque-titulo"><span id="tt1">Combatente</span></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/skillcapped/wow/pricing-page/rank-icon-02_2w4TedmQ1.png?tr=h-80"
+                        height="80">
+                    <div class="ranque-numero"><span id="resultado1"></span></div>
+                    <div></div>
+                    <div>
+                        <div class="tempo">1° Vitória</div>
+                        <div class="ranque-titulo"><span id="tt1">Combatente</span></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/skillcapped/wow/pricing-page/rank-icon-03_uUOFTuf_tV.png?tr=h-80"
+                        height="80">
+                    <div class="ranque-numero"><span id="resultado2"></span></div>
+                    <div></div>
+                    <div>
+                        <div class="tempo">2° Vitória</div>
+                        <div class="ranque-titulo"><span id="tt1">Desafiador</span></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/skillcapped/wow/pricing-page/rank-icon-03_uUOFTuf_tV.png?tr=h-80"
+                        height="80">
+                    <div class="ranque-numero"><span id="resultado3"></span></div>
+                    <div></div>
+                    <div>
+                        <div class="tempo">3° Vitória</div>
+                        <div class="ranque-titulo"><span id="tt1">Desafiador</span></div>
+                    </div>
+                </div>
+                <div><img src="https://ik.imagekit.io/skillcapped/wow/pricing-page/rank-icon-04_uC0W00ZRRb.png?tr=h-80"
+                        height="80">
+                    <div class="ranque-numero"><span id="resultado4"></span></div>
+                    <div></div>
+                    <div>
+                        <div class="tempo">4° Vitória</div>
+                        <div class="ranque-titulo"><span id="tt1">Rival</span></div>
+                    </div>
+                </div>
+                <div><img src="https://ik.imagekit.io/skillcapped/wow/pricing-page/rank-icon-04_uC0W00ZRRb.png?tr=h-80"
+                        height="80">
+                    <div class="ranque-numero"><span id="resultado5"></span></div>
+                    <div></div>
+                    <div>
+                        <div class="tempo">5° Vitória</div>
+                        <div class="ranque-titulo"><span id="tt1">Rival</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+function exibir_ranque(){
+    var ranque = Number(input_rank.value)
+    var contador = 1
+
+        if(ranque > 0 && ranque <= 1799){
+            resultado0.innerHTML = ranque
+            resultado1.innerHTML = ranque + 32
+            resultado2.innerHTML = ranque + 32*2
+            resultado3.innerHTML = ranque + 32*3
+            resultado4.innerHTML = ranque + 32*4
+            resultado5.innerHTML = ranque + 32*5
+            tt1.innerHTML += `Combatente`
+            contador++
+        }else if(ranque <= 1800){
+            resultado0.innerHTML = ranque
+            resultado1.innerHTML = ranque + 25
+            resultado2.innerHTML = ranque + 25*2
+            resultado3.innerHTML = ranque + 25*3
+            resultado4.innerHTML = ranque + 25*4
+            resultado5.innerHTML = ranque + 25*5
+            tt1.innerHTML += `Rival`
+            contador++
+            // tt.innerHTML.innerHTML = `Combatente`
+        }else if (ranque <= 2100){
+            resultado0.innerHTML = ranque
+            resultado1.innerHTML = ranque + 20
+            resultado2.innerHTML = ranque + 20*2
+            resultado3.innerHTML = ranque + 20*3
+            resultado4.innerHTML = ranque + 20*4
+            resultado5.innerHTML = ranque + 20*5
+            tt1.innerHTML += `Duelista`
+            contador++
+        }else if (ranque <= 2400){
+            resultado0.innerHTML = ranque
+            resultado1.innerHTML = ranque + 15
+            resultado2.innerHTML = ranque + 15*2
+            resultado3.innerHTML = ranque + 15*3
+            resultado4.innerHTML = ranque + 15*4
+            resultado5.innerHTML = ranque + 15*5
+            tt1.innerHTML += `Elite`
+            contador++
+        }else{
+            alert("Ranque inválido, você superou o nível avançado")
+        }
+    
+}
+</script>

@@ -1,0 +1,156 @@
+body {
+    background-color: rgb(0 45 64);
+    font-family: Poppins,Open Sans,Questrial,Russo One,cursive;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    margin-bottom: 0px;
+    margin-top: 6px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding-right: 0px;
+}
+
+.base {
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    /* background-color: rgba(128, 128, 128, 0.288); */
+    border: gold solid;
+    align-items: center;
+    justify-content: center;
+
+    /* Plano de fundo*/
+    background-image: url(../assets/imgs/contemplar.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.plano_de_fundo_quadro_personagem {
+    width: 100%;
+    height: 100%;
+
+}
+
+.quadro {
+    width: 50%;
+    background-color: rgba(32,30,33,.5);
+    color: #f8b700;
+    border: gold solid;
+    height: 90%;
+    display: flex;
+    border-radius: 80px
+}
+
+.moldura {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.retrato_personagem {
+    display: flex;
+    justify-content: center;
+    border: 4px double;
+    height: 96px;
+    width: 99px;
+}
+
+.nome_personagem h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.nome_personagem h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.nome_personagem p {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.quadro_modalidade {
+    display: flex;
+    width: 100%;
+    height: 46vh;
+    justify-content: center;  
+}
+
+.modalidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    width: 80%;
+    border-radius: 80px
+}
+
+.modalidade2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    width: 80%;
+    border-radius: 80px;
+    height: 52vh;
+}
+
+input {
+    margin-bottom: 10px;
+    border: 2px solid #f8b70073;
+    padding: 5px;
+    text-align: center;
+    border-radius: 7px;
+    color: #f8b700;
+    background-color: #514c0830;
+  }
+
+.botao {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #850403;
+    width: 120px;
+    align-self: center;
+    margin-top: 5px;
+    color: #b9ab37;
+    border: 2px solid #2c343f;
+}
+
+#box_chat {
+    font-size: 20;
+    font-weight: bold;
+}
+#box_voz {
+    font-size: 20;
+    font-weight: bold;
+}
+
+#input_carta {
+    margin-bottom: 10px;
+    border: 2px solid #f8b70073;
+    padding: 50px;
+    text-align: center;
+    border-radius: 7px;
+    color: #f8b700;
+    background-color: #514c0830;
+    width: 80%;
+}
+
+#titulobox_contato2 {
+    font-size: 12;
+}
+
+.caixa {
+    display: flex;
+}

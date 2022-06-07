@@ -1,0 +1,203 @@
+<!-- Cursor -->
+<style type="text/css">
+    * {
+        cursor: url(https://cur.cursors-4u.net/games/gam-4/gam372.cur), auto !important;
+    }
+</style><a href="https://www.cursors-4u.com/cursor/2008/12/22/world-of-warcraft-wow-hand-armor.html" target="_blank"
+    title="World Of Warcraft, WoW Hand Armor"><img src="https://cur.cursors-4u.net/cursor.png" border="0"
+        alt="World Of Warcraft, WoW Hand Armor" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/funcoes.js"></script>
+    <link rel="icon" href="./assets/icon/lsuperior.jpg">
+    <link rel="stylesheet" href="./css/login_e_cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <!--Header-->
+
+    <!-- <div class="header">
+        <div class="container">
+            <h1 class="titulo">Projeto Individual</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">
+                        Inicial
+                    </a>
+                </li>
+                <li>
+                    <a href="./simulador.html">Simulador</a>
+                </li>
+                <li>|</li>
+                <li class="agora">
+                    <a href="./login.html">Login</a>
+                </li>
+                <li>
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
+
+
+    <div class="banner">
+        <div class="LogoWoW">
+            <a id="blogo" href="./index.html"><img src="./assets/icon/Shadowlands_Logo.png"></a>
+        </div>
+        <!-- <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div> -->
+        <div class="container">
+            <!-- <div class="card_setinha_foto">
+                <img src="../../Imagens/seta2.png">
+            </div> -->
+
+            <!-- LOGO -->
+
+            <div class="card">
+
+                <div class="formulario">
+
+                    <span class="tipo_campo">Email:</span>
+                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+
+                    <span class="tipo_campo">Senha:</span>
+                    <input id="senha_input" type="password" placeholder="******">
+
+                    <button class="btn" onclick="entrar()">Entrar</button>
+
+                </div>
+
+                <!-- <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div> -->
+            </div>
+        </div>
+
+        <div class="btn_lateral_esquerda">
+            <a id="bregistrar" href="./cadastro.html" class="btn_esquerda">Cadastrar</a>
+            <a id="bsiteoficial" href="https://worldofwarcraft.com/pt-br/esports/arena" class="btn_esquerda">Site Oficial</a>
+            <a id="bcreditos" href="https://github.com/Andre-Demucio/P_Individual" class="btn_esquerda">Créditos</a>
+        </div>
+
+        <div class="btn_lateral_direita">
+            <a id="bsair" href="./index.html"><button class="btn_esquerda" onclick="sair()">Home</button></a>
+        </div>
+
+        <!--footer inicio-->
+        <div class="footer">
+            <div class="container">
+                <h4>Copyright 2022-2022 &copy; Projeto Individual. Todos Direitos Reservados.</h4>
+            </div>
+        </div>
+        <!--footer fim-->
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        // aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.usuario;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Email ou senha inválido!")
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
